@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>x64</PlatformTarget>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <RuntimeFrameworkVersion>8.0.30</RuntimeFrameworkVersion>
+    <AssemblyName>Stalker2FireSaveRepair</AssemblyName>
+    <Version>0.6.3</Version>
+    <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+    <Description>Conservative, offline FireBreathDamage save repair for STALKER 2</Description>
+    <Company>Fire Save Repair contributors</Company>
+    <DebugType>none</DebugType>
+    <DefaultItemExcludes>$(DefaultItemExcludes);dist/**;.publishbuild/**;.buildhome/**</DefaultItemExcludes>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Core/effect-types.json" />
+    <EmbeddedResource Include="$(OodleDllPath)" LogicalName="FireSaveRepair.Native.Oodle9" Condition="'$(OodleDllPath)' != '' And Exists('$(OodleDllPath)')" />
+  </ItemGroup>
+</Project>

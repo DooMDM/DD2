@@ -1,0 +1,9 @@
+bin/
+obj/
+dist/
+.buildhome/
+.publishbuild/
+.private-tests/
+*.sav
+*.raw
+*.dll
